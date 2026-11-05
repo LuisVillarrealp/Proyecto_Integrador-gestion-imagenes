@@ -1,0 +1,102 @@
+R-A#show running-config
+Building configuration...
+
+Current configuration : 1211 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname R-A
+!
+!
+!
+enable secret 5 <REDACTADO>
+!
+!
+ip dhcp excluded-address 10.10.0.1 10.10.0.5
+!
+ip dhcp pool USUARIOS-A
+ network 10.10.0.0 255.255.255.224
+ default-router 10.10.0.1
+ dns-server 8.8.8.8
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+username admin secret 5 <REDACTADO>
+!
+!
+license udi pid CISCO2911/K9 sn FTX15245NK6-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip ssh version 2
+no ip domain-lookup
+ip domain-name proyecto.local
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ description Usuarios Sede A
+ ip address 10.10.0.1 255.255.255.224
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ description Servidores Sede A
+ ip address 10.10.0.49 255.255.255.248
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ description Enlace a R-B
+ ip address 10.10.255.1 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+ip route 10.10.1.0 255.255.255.0 10.10.255.2 
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login local
+ transport input ssh
+!
+!
+!
+end
