@@ -1,0 +1,5 @@
+{
+  "token-dev-admin": { "id": "u1", "nombre": "Administrador de prueba", "rol": "Administrador" },
+  "token-dev-empleado": { "id": "u2", "nombre": "Empleado de prueba", "rol": "Empleado", "campanas": ["Camiseta 2026"] },
+  "token-dev-empleado2": { "id": "u3", "nombre": "Otro empleado de prueba", "rol": "Empleado", "campanas": ["Redes"] }
+}
