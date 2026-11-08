@@ -1,0 +1,12 @@
+# Datos generados al ejecutar el servidor (imágenes confidenciales: nunca al repositorio)
+data/imagenes/
+data/metadatos.json
+data/metadatos.json.tmp
+data/actividad.jsonl
+
+# Binarios
+/bin/
+*.exe
+certs/
+data/pruebas/grande.*
+data/descargas/

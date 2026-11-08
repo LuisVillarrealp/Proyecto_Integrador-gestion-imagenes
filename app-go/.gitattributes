@@ -1,0 +1,6 @@
+# Los scripts de shell deben terminar siempre en LF (Bash no ejecuta CRLF).
+*.sh text eol=lf
+*.go text eol=lf
+*.md text eol=lf
+*.png binary
+*.jpg binary
