@@ -30,7 +30,7 @@ Aplicación en **Go** (cliente y servidor) integrada con autenticación en
 ## Estado
 
 - *Etapa 1, Planeación del software:* entregada. Video: https://www.youtube.com/watch?v=rPyS6hrYkdo
-- *Etapa 2, Prototipo en Go (cliente y servidor). Video demostrativo: https://www.youtube.com/watch?v=T8IZ7AxTqlw
+- Etapa 2, Prototipo en Go (cliente y servidor). Video demostrativo: https://www.youtube.com/watch?v=T8IZ7AxTqlw
 - *Siguiente:* integración con FastAPI (JWT), estadísticas y pruebas en la red de las dos sedes.
 
 ## Estructura del repositorio
@@ -58,3 +58,17 @@ La red se simula con OpenWrt en máquinas virtuales. El detalle está en la carp
 ## Documentación
 
 Los informes de cada fase y el entregable en PDF están en la carpeta docs/.
+
+markdown
+## Seguridad
+
+| Riesgo | Medida en el prototipo | Estado |
+|---|---|---|
+| Intercepción del tráfico | HTTPS con TLS 1.2 o superior y CA propia del proyecto | Implementado |
+| Acceso sin permiso a imágenes | Roles (Administrador, Empleado) y campañas asignadas | Implementado |
+| Archivo malicioso | Validación por contenido, solo JPG y PNG, máximo 10 MB | Implementado |
+| Fuerza bruta | Bloqueo tras 3 intentos fallidos | Pendiente (FastAPI) |
+| Robo de la base de contraseñas | Almacenamiento seguro de contraseñas | Pendiente (FastAPI) |
+
+La autenticación definitiva con JWT estará en auth-service/ (FastAPI) y se integra en las semanas 11 y 12.
+Los tokens de prueba del prototipo son ficticios y solo funcionan en la propia máquina.
